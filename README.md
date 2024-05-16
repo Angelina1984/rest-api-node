@@ -20,6 +20,17 @@ To get started with Rest-API-Node, follow these steps:
 4. Make sure you have MongoDB installed and running locally on the default port (27017).
 5. Start the server by running `npm start`.
 
+### Setting Up MongoDB on Windows
+
+If you're using a Windows machine, follow these steps to set up MongoDB:
+
+1. Download and install MongoDB from the official website: [MongoDB Downloads](https://www.mongodb.com/try/download/community)
+2. Install MongoDB under the folder `C:\Program Files\MongoDB\Server\7.0`.
+3. Open Command Prompt as an administrator.
+4. If MongoDB is running, stop it by running the command: `net stop MongoDB`.
+5. If you encounter any issues, ensure MongoDB is not running and delete the `mongod.lock` file located under `C:\Program Files\MongoDB\Server\7.0\data` folder.
+6. Start MongoDB with the following command: `mongod --dbpath "C:\Program Files\MongoDB\Server\7.0\data"`.
+
 ### Available Routes
 
 - **GET /**: Retrieve sample index.html file.
