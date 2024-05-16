@@ -30,6 +30,8 @@ If you're using a Windows machine, follow these steps to set up MongoDB:
 4. If MongoDB is running, stop it by running the command: `net stop MongoDB`.
 5. If you encounter any issues, ensure MongoDB is not running and delete the `mongod.lock` file located under `C:\Program Files\MongoDB\Server\7.0\data` folder.
 6. Start MongoDB with the following command: `mongod --dbpath "C:\Program Files\MongoDB\Server\7.0\data"`.
+7. Find MongoDB Compass on your machine and run it.
+8. Under databases, add new database: users, collection: users
 
 ### Available Routes
 
