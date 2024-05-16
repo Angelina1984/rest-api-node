@@ -3,6 +3,9 @@ const logger = require('morgan');
 const router = express.Router();
 const User = require('../model/User');
 
+/**
+ * GET request handler for fetching all users.
+ */
 router.get('/', async (req, res) => {
   try {
     const users = await User.find();
@@ -14,6 +17,9 @@ router.get('/', async (req, res) => {
   }
 });
 
+/**
+ * GET request handler for fetching a user by ID.
+ */
 router.get('/:id', async (req, res) => {
   try {
     const item = await User.findById(req.params.id);
@@ -27,7 +33,10 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({message: "Error occurred while attempting to retrieve a record from db"});
   }
 });
-//add user
+
+/**
+ * POST request handler for adding a new user.
+ */
 router.post('/', async (req, res) => {
   try {
     const newUser = new User({
@@ -45,7 +54,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-// update user
+/**
+ * PUT request handler for updating an existing user.
+ */
 router.put('/:id', async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(req.params.id, {
@@ -65,6 +76,9 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+/**
+ * DELETE request handler for deleting a user by ID.
+ */
 router.delete('/:id', async (req, res) => {
   try {
     const deleted = await User.findByIdAndDelete(req.params.id);
